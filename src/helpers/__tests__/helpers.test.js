@@ -28,6 +28,18 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
+  it('multiplies negative numbers correctly', () => {
+    expect(helpers.multiply(-1, -4)).toBe(4);
+  });
+  it('multiplies a negative and positive number', () => {
+    expect(helpers.multiply(-1, 4)).toBe(-4);
+  });
+  it('3 numbers returns null', () => {
+    expect(helpers.multiply(-1, -4, 2)).toBe(null);
+  });
+  it('1 number returns null', () => {
+    expect(helpers.multiply(-1)).toBe(null);
+  })
 });
 
 describe('personMaker', () => {
@@ -41,4 +53,20 @@ describe('personMaker', () => {
   });
 
   // write more tests! <===========================================
+  it('return null if not enough arguements', () => {
+    expect(helpers.personMaker(4))
+      .toBe(null);
+  });
 });
+
+describe('multiplyNumbers', () => {
+  it('multiplies 2 numbers', () => {
+    expect(helpers.multiplyNumbers(2, 5)).toBe(10)
+  });
+  it('multiplies 3 numbers', () => {
+    expect(helpers.multiplyNumbers(2, 5, 3)).toBe(30)
+  });
+  it('multiplies 3 numbers', () => {
+    expect(helpers.multiplyNumbers(2, -5, 1, 4)).toBe(-40)
+  });
+})
